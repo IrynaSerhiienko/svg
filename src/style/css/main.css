@@ -86,7 +86,7 @@ h6 {
   font-weight: 400;
 }
 
-.socials-holder, .logo-item-holder, .logo-holder.footer, .footer .footer-holder, .footer, .item-holder, .cards-holder, .wrap, .header {
+.socials-holder, .logo-item-holder, .logo-holder, .footer .footer-holder, .footer, .item-holder, .cards-holder, .wrap, .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,6 +166,9 @@ h6 {
   font-size: 35px;
   line-height: 35px;
   letter-spacing: 0.3;
+  color: #16133d;
+}
+.text-holder.logo.footer {
   color: #ffffff;
 }
 
@@ -236,7 +239,7 @@ h6 {
   display: inline-block;
   width: 64px;
   height: 64px;
-  border: 1px solid rgba(21, 101, 216, 0.1);
+  border: 1px solid #0D0D0D;
   border-radius: 16px;
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
@@ -292,13 +295,22 @@ h6 {
   }
 }
 
-.logo-holder.footer {
+.logo-holder {
   width: 230px;
   height: 35px;
-  margin-bottom: 20px;
 }
-.logo-holder.footer img {
-  margin-right: 12px;
+.logo-holder svg {
+  margin-right: 10px;
+}
+.logo-holder.footer {
+  margin-bottom: 40px;
+}
+.logo-holder.footer a img {
+  display: inline-block;
+  margin-right: 10px;
+}
+.logo-holder.footer a span {
+  display: inline-block;
 }
 
 .logo-item-holder {
@@ -322,10 +334,11 @@ h6 {
   background-color: #efeef3;
   border-radius: 5px;
 }
-.icon-holder:hover {
-  color: #3DB370;
-  -webkit-box-shadow: 10px 5px 5px black;
-          box-shadow: 10px 5px 5px black;
+.icon-holder i {
+  color: #0d0d0d;
+}
+.icon-holder i:hover {
+  color: #3db370;
 }
 
 .icon-instagram:before {

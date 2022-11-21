@@ -40,20 +40,12 @@
       margin-bottom: 15px;
 
       .pseudo-title {
-        @include font-setting("Roboto", normal, 400, 16px, 21px, 0.3, #7690a8);
+        @include font-setting("Roboto", normal, 400, 16px, 21px, 0.3, $gray);
       }
     }
 
     h1 {
-      @include font-setting(
-        "Nunito Sans",
-        normal,
-        600,
-        40px,
-        52px,
-        0.2,
-        #16133d
-      );
+      @include font-setting("Nunito Sans", normal, 600, 40px, 52px, 0.2, $dark);
       margin-bottom: 40px;
     }
   }
@@ -61,15 +53,16 @@
 
 .text-holder {
   &.logo {
-    @include font-setting("Quicksand", normal, 500, 35px, 35px, 0.3, #ffffff);
+    @include font-setting("Quicksand", normal, 500, 35px, 35px, 0.3, $dark);
+
+    &.footer {
+      color: $white;
+    }
   }
 }
 .span-holder {
-  @include font-setting("Roboto", normal, 400, 24px, 21px, 0.2, #16133d);
+  @include font-setting("Roboto", normal, 400, 24px, 21px, 0.2, $dark);
   margin-bottom: 15px;
-}
-
-.pseudo-title {
 }
 
 .cards-holder {
@@ -88,7 +81,7 @@
 .item-holder {
   @include size-m-w(370px, 340px);
   @extend %flex;
-  border: 1px solid #e5eaf4;
+  border: 1px solid $light-gray;
   border-radius: 8px;
   padding: 40px 20px;
   width: 100%;
@@ -102,7 +95,7 @@
   }
 
   &:hover {
-    border-color: #3db370;
+    border-color: $green;
 
     .icon {
       background-position: 13px -43px;
@@ -125,21 +118,22 @@
   background-position: 13px 13px;
   display: inline-block;
   @include size(64px, 64px);
-  border: 1px solid rgba(21, 101, 216, 0.1);
+  border: 1px solid $dark-social;
   border-radius: 16px;
   transition: all ease-in-out 0.3s;
 }
 
 .p-holder {
   @include size-m-w(275px, 80px);
-  @include font-setting("Roboto", normal, 400, 16px, 28px, 0.2, #16133d);
+  @include font-setting("Roboto", normal, 400, 16px, 28px, 0.2, $dark);
   margin-bottom: 30px;
 }
 
 .link-holder {
   padding-left: 10px;
+
   a {
-    @include font-setting("Roboto", normal, 600, 16px, 19px, 0.2, #3db370);
+    @include font-setting("Roboto", normal, 600, 16px, 19px, 0.2, $green);
   }
 }
 
@@ -164,14 +158,25 @@
 }
 
 .logo-holder {
-  &.footer {
-    @extend %flex;
-    @include size(230px, 35px);
-    margin-bottom: 20px;
+  @extend %flex;
+  @include size(230px, 35px);
 
-    img {
-      margin-right: 12px;
+  svg {
+    margin-right: 10px;
+  }
+
+  &.footer {
+    a {
+      img {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      span {
+        display: inline-block;
+      }
     }
+    margin-bottom: 40px;
+    //padding-right: 15px;
   }
 }
 
@@ -190,12 +195,15 @@
   @include size(38px, 38px);
   position: relative;
   display: inline-block;
-  background-color: #efeef3;
+  background-color: $bg-social;
   border-radius: 5px;
 
-  &:hover {
-    color: #3DB370;
-    transform: scale(0.5);
+  i {
+    color: #0d0d0d;
+  }
+
+  i:hover {
+    color: #3db370;
   }
 }
 
