@@ -1,268 +1,232 @@
 .header {
-  @include size-m-w(1440px, 80);
+  @extend %flex;
   border-bottom: 1px solid #efeef3;
-  background-color: $white;
-  @extend %flex;
-  margin: 0 auto;
   margin-bottom: 50px;
 
   @media screen and (min-width: 1440px) {
     margin-bottom: 100px;
   }
 
-  .header-holder {
-    @include size(1170px, auto);
+  .container {
     padding: 22px 10px;
-    margin: 0 auto;
 
     @media screen and (min-width: 1440px) {
-      padding: 20px 0;
+      padding: 22px 0;
     }
-  }
-}
-
-.wrap {
-  @include size-m-w(1170px, auto);
-  @extend %flex;
-
-  @media screen and (min-width: 1024px) {
-    margin: 0 auto;
-  }
-
-  .text-holder {
-    padding-left: 10px;
-
-    @media screen and (min-width: 1440px) {
-      padding-left: 0;
-    }
-
-    .span-holder {
-      margin-bottom: 15px;
-
-      .pseudo-title {
-        @include font-setting("Roboto", normal, 400, 16px, 21px, 0.3, $gray);
-      }
-    }
-
-    h1 {
-      @include font-setting("Nunito Sans", normal, 600, 40px, 52px, 0.2, $dark);
-      margin-bottom: 40px;
-    }
-  }
-}
-
-.text-holder {
-  &.logo {
-    @include font-setting("Quicksand", normal, 500, 35px, 35px, 0.3, $dark);
-
-    &.footer {
-      color: $white;
-    }
-  }
-}
-.span-holder {
-  @include font-setting("Roboto", normal, 400, 24px, 21px, 0.2, $dark);
-  margin-bottom: 15px;
-}
-
-.cards-holder {
-  @include size-m-w(1170px, auto);
-  @extend %flex;
-  gap: 20px;
-  padding: 0 10px;
-  margin-bottom: 50px;
-
-  @media screen and (min-width: 1440px) {
-    padding: 0;
-    margin-bottom: 100px;
-  }
-}
-
-.item-holder {
-  @include size-m-w(370px, 340px);
-  @extend %flex;
-  border: 1px solid $light-gray;
-  border-radius: 8px;
-  padding: 40px 20px;
-  width: 100%;
-
-  @media screen and (min-width: 768px) {
-    width: 45%;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 31%;
-  }
-
-  &:hover {
-    border-color: $green;
-
-    .icon {
-      background-position: 13px -43px;
-    }
-  }
-}
-
-.content-holder {
-  @include size-m-w(290px, 260px);
-}
-
-.sprite-holder {
-  padding-left: 10px;
-  margin-bottom: 30px;
-}
-
-.icon {
-  background-image: url(../../img/megaphones.svg);
-  background-repeat: no-repeat;
-  background-position: 13px 13px;
-  display: inline-block;
-  @include size(64px, 64px);
-  border: 1px solid $dark-social;
-  border-radius: 16px;
-  transition: all ease-in-out 0.3s;
-}
-
-.p-holder {
-  @include size-m-w(275px, 80px);
-  @include font-setting("Roboto", normal, 400, 16px, 28px, 0.2, $dark);
-  margin-bottom: 30px;
-}
-
-.link-holder {
-  padding-left: 10px;
-
-  a {
-    @include font-setting("Roboto", normal, 600, 16px, 19px, 0.2, $green);
   }
 }
 
 .footer {
-  @include size-m-w(1440px, auto);
   @extend %flex;
-  margin: 0 auto;
-  background-color: #16133d;
+  background-color: $dark;
 
-  .footer-holder {
-    @include size(1170px, auto);
-    @extend %flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px 10px;
-    margin: 0 auto;
+  .container {
+    flex-direction: column;
+    padding: 40px 10px;
 
-    @media screen and (min-width: 1024px) {
-      padding: 40px 10px;
+    @media screen and (min-width: 1440px) {
+      padding: 40px 0;
     }
   }
-}
 
-.logo-holder {
-  @extend %flex;
-  @include size(230px, 35px);
-
-  svg {
-    margin-right: 10px;
-  }
-
-  &.footer {
-    a {
-      img {
-        display: inline-block;
-        margin-right: 10px;
-      }
-      span {
-        display: inline-block;
-      }
-    }
+  .logo-holder {
     margin-bottom: 40px;
-    //padding-right: 15px;
   }
 }
 
-.logo-item-holder {
+.main {
   @extend %flex;
-  flex-direction: column;
+
+  .container {
+    padding: 0 10px;
+
+    @media screen and (min-width: 1440px) {
+      padding: 0;
+    }
+
+    .text-holder {
+      margin-bottom: 30px;
+
+      .pseudo-title {
+        @include font-setting("Roboto", normal, 400, 16px, 21px, 0.3, $gray);
+      }
+
+      h1 {
+        @include font-setting(
+          "Nunito Sans",
+          normal,
+          600,
+          40px,
+          52px,
+          0.2,
+          $dark
+        );
+      }
+
+      .span-holder {
+        @include font-setting("Roboto", normal, 400, 24px, 21px, 0.2, $dark);
+        margin-bottom: 15px;
+      }
+    }
+
+    .cards-holder {
+      width: 100%;
+      @extend %flex;
+      justify-content: flex-start;
+      gap: 20px;
+      margin-bottom: 50px;
+
+      @media screen and (min-width: 1024px) {
+        justify-content: space-between;
+      }
+
+      @media screen and (min-width: 1440px) {
+        margin-bottom: 100px;
+      }
+
+      .item-holder {
+        @include size-m-w(370px, auto);
+        @extend %flex;
+        flex-direction: column;
+        border: 1px solid $light-gray;
+        border-radius: 8px;
+        padding: 20px 10px;
+        //width: 100%;
+
+        @media screen and (min-width: 768px) {
+          width: 45%;
+        }
+
+        @media screen and (min-width: 1024px) {
+          width: 31%;
+        }
+
+        @media screen and (min-width: 1440px) {
+          padding: 40px 40px;
+        }
+
+        &:hover {
+          border-color: $green;
+
+          .icon {
+            border: 1px solid #3db370;
+            background-position: 13px -43px;
+          }
+        }
+
+        .p-holder {
+          @include size-m-w(275px, 80px);
+          @include font-setting("Roboto", normal, 400, 16px, 28px, 0.2, $dark);
+        }
+
+        .link-holder {
+          a {
+            @include font-setting(
+              "Roboto",
+              normal,
+              600,
+              16px,
+              19px,
+              0.2,
+              $green
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+.sprite-holder {
+  margin-bottom: 30px;
+
+  .icon {
+    background-image: url(../../img/megaphones.svg);
+    background-repeat: no-repeat;
+    background-position: 13px 13px;
+    display: inline-block;
+    @include size(64px, 64px);
+    border: 1px solid #1565d8;
+    border-radius: 16px;
+    transition: all ease-in-out 0.3s;
+  }
 }
 
 .socials-holder {
-  @include size(230px, 38px);
-  @extend %flex;
-  gap: 10px;
-}
+  .link {
+    @include size(38px, 38px);
+    position: relative;
+    display: inline-block;
+    background-color: $bg-social;
+    border-radius: 5px;
+    margin-right: 10px;
 
-.icon-holder {
-  @include size(38px, 38px);
-  position: relative;
-  display: inline-block;
-  background-color: $bg-social;
-  border-radius: 5px;
+    i {
+      color: #0d0d0d;
+    }
 
-  i {
-    color: #0d0d0d;
+    &:hover i {
+      color: #3db370;
+    }
   }
 
-  i:hover {
-    color: #3db370;
+  .icon-instagram:before {
+    content: "\ea92";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
   }
-}
 
-.icon-instagram:before {
-  content: "\ea92";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-}
+  .icon-social-facebook:before {
+    content: "\e900";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+  }
 
-.icon-social-facebook:before {
-  content: "\e900";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-}
+  .icon-github:before {
+    content: "\eab0";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+  }
 
-.icon-github:before {
-  content: "\eab0";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-}
+  .icon-dribbble:before {
+    content: "\eaa7";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 19px;
+  }
 
-.icon-dribbble:before {
-  content: "\eaa7";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 19px;
-}
-
-.icon-twitter:before {
-  content: "\ea96";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 19px;
+  .icon-twitter:before {
+    content: "\ea96";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 19px;
+  }
 }
